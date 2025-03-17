@@ -1,1 +1,2 @@
-# There starting the path to the galaxy of wonders!
+# There begins the journey to the galaxy of wonders!
+
