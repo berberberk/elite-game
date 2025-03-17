@@ -2,7 +2,7 @@
 import pygame, sys
 from settings import *
 from math import sqrt
-from IPython.display import clear_output
+#from IPython.display import clear_output
 from galaxy import Galaxy
 from player import Player
 from galaxy_map import *
