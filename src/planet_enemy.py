@@ -41,7 +41,7 @@ class PlanetEnemy(pygame.sprite.Sprite):
         self.invincibility_duration = 300
 
     def import_image(self):
-        path = "Images/Enemies/sceleton/" + self.image_status + str(int(self.image_frame) + 1) + ".png"
+        path = "../Images/Enemies/sceleton/" + self.image_status + str(int(self.image_frame) + 1) + ".png"
         now_image = pygame.image.load(path).convert_alpha()
         now_image = pygame.transform.scale(now_image, (64, 64))
         return now_image

@@ -1,5 +1,5 @@
-from plansys import PlanetarySystem
-import settings
+from src.plansys import PlanetarySystem
+from src import settings
 import random
 import numpy as np
 PAIRS = "..LEXEGEZACEBISOUSESARMAINDIREA.ERATENBERALAVETIEDORQUANTEISRION"

@@ -1,9 +1,4 @@
 import pygame
-import galaxy
-import math
-import system_generator
-import plansys
-from debug import debug
 from math import sqrt
 from timer import Timer
 from settings import *
@@ -50,7 +45,7 @@ class CameraGroup(pygame.sprite.Group):
         self.camera_borders = {'left': 0, 'right': 0, 'top': 0, 'bottom': 0}
         self.camera_rect = self.camera_rect_setup()
 
-        background_image = pygame.image.load('Images/galaxy_map_square_background.png').convert_alpha()
+        background_image = pygame.image.load('../Images/galaxy_map_square_background.png').convert_alpha()
         self.background_surf = pygame.transform.scale(background_image, (MAP_WIDTH * 1.25, MAP_HEIGHT * 1.25))
         self.background_rect = self.background_surf.get_rect(topleft=(0, 0))
 

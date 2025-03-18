@@ -1,16 +1,10 @@
 # Заготовка для игры
 import pygame, sys
-from settings import *
-from math import sqrt
 #from IPython.display import clear_output
-from galaxy import Galaxy
+from src.galaxy import Galaxy
 from player import Player
-from galaxy_map import *
-from debug import debug
+from src.galaxy_map import *
 from planet_map import PlanetMap
-
-import galaxy_map
-import numpy as np
 
 
 class Camera:
@@ -36,7 +30,7 @@ class Game:
         self.clock = pygame.time.Clock()
         # Работа с музыкой
         pygame.mixer.init()
-        pygame.mixer.music.load('Music/elite_game_cbl_ambient.wav')  # Загрузка аудиофайла для фоновой музыки
+        pygame.mixer.music.load('../Music/elite_game_cbl_ambient.wav')  # Загрузка аудиофайла для фоновой музыки
         pygame.mixer.music.set_volume(0.5)
 
         # Работа с галактикой
@@ -103,14 +97,14 @@ class Game:
 
                             if self.player.current_planet.gold_planet != 0:  # если мы на золотой планете
                                 self.player.current_planet.gold_planet = 0  # делаем планету обычной
-                                pygame.mixer.music.load('Music/extra_music.mp3')  # Играем секретную музыку
+                                pygame.mixer.music.load('../Music/extra_music.mp3')  # Играем секретную музыку
                                 pygame.mixer.music.set_volume(0.5)
                                 pygame.mixer.music.play(-1)
                                 music_mode = "space_gold"
 
                             else:
                                 if music_mode == "space_gold":  # если мы ушли с золотой планеты, запускается обычная музыка
-                                    pygame.mixer.music.load('Music/elite_game_cbl_ambient.wav')
+                                    pygame.mixer.music.load('../Music/elite_game_cbl_ambient.wav')
                                     pygame.mixer.music.set_volume(0.5)
                                     pygame.mixer.music.play(-1)
                                     music_mode = "space"
@@ -127,13 +121,13 @@ class Game:
                     elif event.key == pygame.K_e:  # нажатие на кнопку "E" меняет карту космоса на карту планеты
                         if self.player.display_mode == "map":
                             self.player.display_mode = "planet"
-                            pygame.mixer.music.load('Music/planet_music.mp3')
+                            pygame.mixer.music.load('../Music/planet_music.mp3')
                             pygame.mixer.music.set_volume(0.5)
                             pygame.mixer.music.play(-1)
                             music_mode = "planet"
                         else:
                             self.player.display_mode = "map"
-                            pygame.mixer.music.load('Music/elite_game_cbl_ambient.wav')
+                            pygame.mixer.music.load('../Music/elite_game_cbl_ambient.wav')
                             pygame.mixer.music.set_volume(0.5)
                             pygame.mixer.music.play(-1)
                             music_mode = "space"

@@ -50,14 +50,14 @@ class PlanetPlayer(pygame.sprite.Sprite):
         self.can_attack = True
 
     def import_image(self):
-        path = "Images/Player/" + self.image_status + str(int(self.image_frame) + 1) + ".png"
+        path = "../Images/Player/" + self.image_status + str(int(self.image_frame) + 1) + ".png"
         now_image = pygame.image.load(path).convert_alpha()
         now_image = pygame.transform.scale(now_image, (64, 64))
         return now_image
 
     def import_tools_sprites(self):
         for tool in self.tools:
-            path = "Images/tools/" + tool + ".png"
+            path = "../Images/tools/" + tool + ".png"
             try:
                 tool_sprite = pygame.image.load(path).convert_alpha()
                 tool_sprite = pygame.transform.scale(tool_sprite, (50, 50))

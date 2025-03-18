@@ -1,8 +1,5 @@
-import pygame
-
 from seed import FastSeedType
 from math import sqrt
-from galaxy_map import Planet
 import numpy as np
 
 

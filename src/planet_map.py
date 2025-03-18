@@ -1,14 +1,9 @@
 import pygame
-import galaxy
-import math
-import system_generator
 from settings import *
-from debug import debug
 from planet_player import PlanetPlayer
-from planet_enemy import PlanetEnemy
-from overlay import Overlay
+from src.planet_enemy import PlanetEnemy
+from src.overlay import Overlay
 from pytmx.util_pygame import load_pygame
-from timer import Timer
 
 
 class Tile(pygame.sprite.Sprite):
@@ -53,7 +48,7 @@ class PlanetMap:
         self.camera = Camera(self.display_surface.get_width(), self.display_surface.get_height())
 
     def setup(self):
-        tmx_data = load_pygame("Tiles/map1.tmx")
+        tmx_data = load_pygame("../Tiles/map1.tmx")
         for layer in tmx_data.visible_layers:
             if hasattr(layer, 'data'):
                 for x, y, surf in layer.tiles():
@@ -104,9 +99,9 @@ class PlanetMap:
         if self.planet_player.vulnerable:
             if self.planet_player.hp:
                 self.planet_player.hp -= amount
-                pygame.mixer.Sound('Music/sounds/bruh.mp3').play()
+                pygame.mixer.Sound('../Music/sounds/bruh.mp3').play()
             else:
-                pygame.mixer.music.load('Music/sounds/you_died.mp3')
+                pygame.mixer.music.load('../Music/sounds/you_died.mp3')
                 pygame.mixer.music.play(1)
                 self.planet_player.kill()
             self.planet_player.vulnerable = False
